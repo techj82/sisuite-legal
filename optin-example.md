@@ -13,24 +13,9 @@
       color: #333;
     }
 
-    .wrapper {
-      display: flex;
-      gap: 40px;
-      max-width: 1100px;
+    .container {
+      max-width: 700px;
       margin: auto;
-    }
-
-    .form-box {
-      flex: 1;
-      border: 1px solid #ddd;
-      padding: 30px;
-      border-radius: 8px;
-    }
-
-    .side-notes {
-      width: 300px;
-      border-left: 4px solid #f4c400;
-      padding-left: 20px;
     }
 
     h1 {
@@ -53,6 +38,8 @@
       font-weight: bold;
     }
 
+    input[type="text"],
+    input[type="email"],
     input[type="text"] {
       width: 100%;
       padding: 12px;
@@ -85,24 +72,25 @@
       line-height: 1.5;
     }
 
-    .side-notes h3 {
-      margin-top: 0;
-      font-size: 18px;
+    .notes {
+      margin-top: 25px;
+      padding: 15px;
+      background: #fafafa;
+      border-left: 4px solid #f4c400;
     }
 
-    .side-notes ul {
-      padding-left: 20px;
-      margin-top: 10px;
+    .notes ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
     }
 
-    .side-notes li {
-      margin-bottom: 8px;
+    .notes li {
       font-size: 14px;
-      color: #444;
+      margin-bottom: 6px;
     }
 
     .transactional {
-      margin-top: 20px;
+      margin-top: 15px;
       color: #c00;
       font-weight: bold;
     }
@@ -110,43 +98,49 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="container">
 
-    <!-- LEFT SIDE: FORM -->
-    <div class="form-box">
-      <h1>SISuite</h1>
-      <h2>
-        Service Intake Suite — a reusable, AI-powered automation platform for service
-        businesses (HVAC, plumbing, home services, etc.) that handles the full customer
-        lifecycle: lead intake, AI-driven enrichment/qualification, scheduling and
-        reminders, technician dispatch, CRM integration, and invoicing/payments.
-      </h2>
+    <h1>SISuite</h1>
+    <h2>
+      Service Intake Suite — a reusable, AI-powered automation platform for service businesses
+      (HVAC, plumbing, home services, etc.) that handles the full customer lifecycle: lead intake,
+      AI-driven enrichment/qualification, scheduling and reminders, technician dispatch, CRM
+      integration, and invoicing/payments.
+    </h2>
 
-      <label for="phone">Phone Number (Optional)</label>
-      <input type="text" id="phone" placeholder="Enter your phone number" />
+    <!-- FORM FIELDS (matching Twilio example) -->
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" placeholder="Enter your first name" />
 
-      <p class="small">
-        By adding your number above, you accept the SISuite
-        <a href="https://techj82.github.io/sisuite-legal/terms.html">Terms of Service</a>
-        &amp;
-        <a href="https://techj82.github.io/sisuite-legal/privacy.html">Privacy Policy</a>
-        and you are allowing SISuite to send transactional SMS authentication messages
-        such as login verification codes, password reset confirmations, and security alerts.
-        Message frequency may vary. Message and data rates may apply. Reply HELP for help or STOP to opt-out.
-      </p>
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" placeholder="Enter your last name" />
 
-      <button class="button">Continue</button>
-    </div>
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Enter your email" />
 
-    <!-- RIGHT SIDE: COMPLIANCE NOTES -->
-    <div class="side-notes">
-      <h3>Compliance requirements:</h3>
+    <label for="phone">Phone Number (Optional)</label>
+    <input type="text" id="phone" placeholder="Enter your phone number" />
+
+    <!-- REQUIRED TWILIO COMPLIANCE TEXT -->
+    <p class="small">
+      By adding your number above, you accept the SISuite
+      <a href="https://techj82.github.io/sisuite-legal/terms.html">Terms of Service</a> &
+      <a href="https://techj82.github.io/sisuite-legal/privacy.html">Privacy Policy</a> and you are
+      allowing SISuite to send transactional/informational SMS communications regarding account
+      notifications, authentication, and customer care. Message frequency may vary. Message and data
+      rates may apply. Reply HELP for help or STOP to opt-out.
+    </p>
+
+    <button class="button">Continue</button>
+
+    <!-- COMPLIANCE NOTES (Twilio-style) -->
+    <div class="notes">
+      <strong>Compliance requirements:</strong>
       <ul>
-        <li>Brand/Business name must match the campaign</li>
-        <li>Phone number collection box must be optional</li>
-        <li>Opt-in language must match the Authentication/OTP use case</li>
+        <li>Brand/Business name must match the campaign information.</li>
+        <li>Phone number collection box must be optional.</li>
+        <li>Opt-in language must match the campaign use case.</li>
       </ul>
-
       <div class="transactional">Transactional — No checkbox</div>
     </div>
 
