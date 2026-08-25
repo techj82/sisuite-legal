@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SISuite Opt-In Example</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,39 +15,39 @@
     }
 
     .container {
-      max-width: 700px;
+      max-width: 600px;
       margin: auto;
+      text-align: center;
     }
 
     h1 {
-      margin: 0;
-      font-size: 28px;
+      font-size: 32px;
+      margin-bottom: 5px;
     }
 
-    h2 {
-      margin-top: 8px;
-      font-size: 14px;
-      font-weight: normal;
+    .description {
+      font-size: 13px;
       color: #555;
       line-height: 1.4;
+      margin-bottom: 30px;
     }
 
     label {
       display: block;
-      margin-top: 25px;
-      margin-bottom: 8px;
+      text-align: left;
+      margin-top: 20px;
+      margin-bottom: 6px;
       font-weight: bold;
     }
 
     input[type="text"],
-    input[type="email"],
-    input[type="text"] {
+    input[type="email"] {
       width: 100%;
       padding: 12px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .button {
@@ -67,32 +68,11 @@
     }
 
     .small {
-      font-size: 14px;
+      font-size: 13px;
       color: #555;
       line-height: 1.5;
-    }
-
-    .notes {
-      margin-top: 25px;
-      padding: 15px;
-      background: #fafafa;
-      border-left: 4px solid #f4c400;
-    }
-
-    .notes ul {
-      margin: 10px 0 0 20px;
-      padding: 0;
-    }
-
-    .notes li {
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
-    .transactional {
-      margin-top: 15px;
-      color: #c00;
-      font-weight: bold;
+      margin-top: 20px;
+      text-align: left;
     }
   </style>
 </head>
@@ -101,14 +81,15 @@
   <div class="container">
 
     <h1>SISuite</h1>
-    <h2>
+
+    <p class="description">
       Service Intake Suite — a reusable, AI-powered automation platform for service businesses
       (HVAC, plumbing, home services, etc.) that handles the full customer lifecycle: lead intake,
       AI-driven enrichment/qualification, scheduling and reminders, technician dispatch, CRM
       integration, and invoicing/payments.
-    </h2>
+    </p>
 
-    <!-- FORM FIELDS (matching Twilio example) -->
+    <!-- FORM FIELDS -->
     <label for="firstname">First Name</label>
     <input type="text" id="firstname" placeholder="Enter your first name" />
 
@@ -132,17 +113,6 @@
     </p>
 
     <button class="button">Continue</button>
-
-    <!-- COMPLIANCE NOTES (Twilio-style) -->
-    <div class="notes">
-      <strong>Compliance requirements:</strong>
-      <ul>
-        <li>Brand/Business name must match the campaign information.</li>
-        <li>Phone number collection box must be optional.</li>
-        <li>Opt-in language must match the campaign use case.</li>
-      </ul>
-      <div class="transactional">Transactional — No checkbox</div>
-    </div>
 
   </div>
 </body>
